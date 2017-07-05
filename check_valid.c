@@ -29,7 +29,7 @@ static int	is_line(char *str)
 	return (-1);
 }
 
-char	*check_valid(char **strarr)
+char	**check_valid(char **strarr)
 {
 	int i;
 

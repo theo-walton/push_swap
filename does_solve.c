@@ -75,16 +75,14 @@ static void	check_if_solved(int *brr, int *arr)
 
 void    does_solve(char **strarr, int *arr)
 {
-	int *brr;
+	int brr[arr[0] + 1];
 	int i;
 
-	i = 0;
-	if (str == NULL)
+	if (strarr == NULL)
 		return ;
-	brr = ft_memalloc(sizeof(int) * (arr[0] + 1));
+	i = 0;
 	brr[0] = 0;
 	while (strarr[i])
 		perform_action(strarr[i++], brr, arr);
 	check_if_solved(brr, arr);
-	free(brr);
 }
