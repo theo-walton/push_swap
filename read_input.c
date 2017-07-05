@@ -12,11 +12,26 @@
 
 char	**read_input(void);
 {
-	while (1)
+	char buff[2];
+	int toggle1;
+	int toggle2;
+
+	toggle1 = 0;
+	toggle2 = 0;
+	buff[0] = '\0';
+	buff[1] = '\0';
+	while (buff[0] != '\n' || buff[1] != '\n')
 	{
-		get_next_line(0, instruction);
-		add_to_instruction_list();
-		if (^d is pressed)
-			break;
+		buff[0] = buff[1];
+		read(0, buff + 1, 1);
+		if (buff[1] == '\0')
+			toggle2 = 1;
+		if (!toggle1 && !(ft_createstr(buff[1], 10)))
+			toggle1 = 1;
 	}
+	if (toggle1)
+		return (NULL);
+	if (toggle2)
+		return ((char**)1);
+	return (ft_strsplit(ft_createstr('\0', 10), '\n'));
 }

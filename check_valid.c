@@ -34,10 +34,21 @@ char	**check_valid(char **strarr)
 	int i;
 
 	i = 0;
+	if (strarr == NULL)
+	{
+		write(2, "Memory Allocation Failed\n", 25);
+		return (NULL);
+	}
+	if (strarr == (char**)1)
+	{
+		write(2, "Nice try... You test pretty well!\n", 34);
+		return (NULL);
+	}
 	while (is_line(strarr[i]) != 0 && is_line(strarr[i]) != -1)
 		i++;
 	if (is_line(strarr[i]) == 0)
 		return (strarr);
-	write(2, "Error", 5);
+	write(2, "Invalid Instruction(s)\n", 23);
+	free_strarr(strarr);
 	return (NULL);
 }
