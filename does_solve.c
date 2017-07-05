@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   does_solve.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twalton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/04 03:28:19 by twalton           #+#    #+#             */
-/*   Updated: 2017/07/04 03:28:19 by twalton          ###   ########.fr       */
+/*   Created: 2017/07/04 20:27:24 by twalton           #+#    #+#             */
+/*   Updated: 2017/07/04 20:27:24 by twalton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	main(int ac, char **av)
+
+
+static void	perform_action(char *action, int *brr, int *arr)
 {
-	int *arr;
+	if (!ft_strcmp(action, "sa"))
+		swap_elem(arr);
+}
 
-	arr = get_array(ac, av);
-	if (arr[0] == -1)
-		do_stuff();
-	if (arr[0] == -2)
-		do_other_stuff();
-	does_solve(check_valid(read_input()), arr);
+void    does_solve(char **strarr, int *arr)
+{
+	int *brr;
+	int i;
 
+	i = 0;
+	if (str == NULL)
+		return ;
+	brr = ft_memalloc(sizeof(int) * arr[0]);
+	while (strarr[i])
+		perform_action(strarr[i++], brr, arr);
+	check_if_solved(brr, arr + 1);
+	free(brr);
 }
