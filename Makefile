@@ -10,27 +10,26 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = tester
+NAME = checker
 
-SRC = checker.c does_solve.c push_elem.c rot_elem.c check_valid.c get_array.c \
-read_input.c swap_elem.c libft/ft_isdigit.c libft/ft_atoi.c libft/ft_strsplit.c \
-libft/ft_createstr.c libft/ft_strcmp.c libft/ft_strnew.c libft/ft_strlen.c \
+SRC = part1/checker.c part1/does_solve.c part1/push_elem.c part1/rot_elem.c part1/check_valid.c \
+part1/get_array.c part1/read_input.c part1/swap_elem.c libft/ft_isdigit.c libft/ft_atoi.c \
+libft/ft_strsplit.c libft/ft_createstr.c libft/ft_strcmp.c libft/ft_strnew.c libft/ft_strlen.c \
 libft/ft_strcpy.c libft/ft_bzero.c libft/ft_memset.c
 
-OBJ = *.o
+OBJ = objects/*.o
 
-HEADERS = -I .
+HEADERS = -I includes/.
 
 all: $(NAME)
 
 $(NAME):
-	cp libft/includes/libft.h .
-	gcc -Wfatal-errors -Wall -Wextra -Werror -c $(SRC) $(HEADERS)
-	gcc $(OBJ) -o tester
-	rm libft.h
+	gcc -Wall -Wextra -Werror -c $(SRC) $(HEADERS)
+	mv *.o objects
+	gcc $(OBJ) -o $(NAME)
 
 clean:
-	rm -rf *.o
+	rm -rf objects/*.o
 
 fclean: clean
 	rm -rf $(NAME)
