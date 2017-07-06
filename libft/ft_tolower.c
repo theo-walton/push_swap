@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_elem.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twalton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/04 22:00:07 by twalton           #+#    #+#             */
-/*   Updated: 2017/07/04 22:00:07 by twalton          ###   ########.fr       */
+/*   Created: 2017/06/07 16:24:43 by twalton           #+#    #+#             */
+/*   Updated: 2017/06/07 16:24:45 by twalton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
-
-void	swap_elem(int *arr)
+int	ft_tolower(int c)
 {
-	int temp;
-
-	if (arr[0] <= 1)
-		return ;
-	temp = arr[1];
-	arr[1] = arr[2];
-	arr[2] = temp;
+	if (c >= 65 && c <= 90)
+		return (c + 32);
+	return (c);
 }

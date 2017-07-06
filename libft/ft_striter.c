@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_elem.c                                        :+:      :+:    :+:   */
+/*   ft_striter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twalton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/04 22:00:07 by twalton           #+#    #+#             */
-/*   Updated: 2017/07/04 22:00:07 by twalton          ###   ########.fr       */
+/*   Created: 2017/06/07 16:12:24 by twalton           #+#    #+#             */
+/*   Updated: 2017/06/07 16:12:25 by twalton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
-
-void	swap_elem(int *arr)
+void	ft_striter(char *s, void (*f)(char *))
 {
-	int temp;
+	int i;
 
-	if (arr[0] <= 1)
-		return ;
-	temp = arr[1];
-	arr[1] = arr[2];
-	arr[2] = temp;
+	i = 0;
+	while (s[i])
+	{
+		f(&s[i]);
+		i++;
+	}
 }

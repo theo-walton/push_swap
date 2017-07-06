@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_elem.c                                        :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twalton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/04 22:00:07 by twalton           #+#    #+#             */
-/*   Updated: 2017/07/04 22:00:07 by twalton          ###   ########.fr       */
+/*   Created: 2017/06/07 15:51:54 by twalton           #+#    #+#             */
+/*   Updated: 2017/06/07 15:51:54 by twalton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include <stdlib.h>
+#include "libft.h"
 
-void	swap_elem(int *arr)
+void	*ft_memalloc(size_t size)
 {
-	int temp;
+	void	*memory;
 
-	if (arr[0] <= 1)
-		return ;
-	temp = arr[1];
-	arr[1] = arr[2];
-	arr[2] = temp;
+	memory = malloc(size);
+	if (memory == NULL)
+		return (NULL);
+	ft_bzero(memory, size);
+	return (memory);
 }

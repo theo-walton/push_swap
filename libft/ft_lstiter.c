@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_elem.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twalton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/04 22:00:07 by twalton           #+#    #+#             */
-/*   Updated: 2017/07/04 22:00:07 by twalton          ###   ########.fr       */
+/*   Created: 2017/06/08 00:13:21 by twalton           #+#    #+#             */
+/*   Updated: 2017/06/08 00:13:22 by twalton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "libft.h"
 
-void	swap_elem(int *arr)
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	int temp;
-
-	if (arr[0] <= 1)
-		return ;
-	temp = arr[1];
-	arr[1] = arr[2];
-	arr[2] = temp;
+	while (lst)
+	{
+		f(lst);
+		lst = lst->next;
+	}
 }

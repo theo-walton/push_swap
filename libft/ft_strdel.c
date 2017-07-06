@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_elem.c                                        :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twalton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/04 22:00:07 by twalton           #+#    #+#             */
-/*   Updated: 2017/07/04 22:00:07 by twalton          ###   ########.fr       */
+/*   Created: 2017/06/07 16:10:25 by twalton           #+#    #+#             */
+/*   Updated: 2017/06/07 16:10:28 by twalton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include <stdlib.h>
 
-void	swap_elem(int *arr)
+void	ft_strdel(char **as)
 {
-	int temp;
-
-	if (arr[0] <= 1)
+	if (as == NULL)
 		return ;
-	temp = arr[1];
-	arr[1] = arr[2];
-	arr[2] = temp;
+	free(*as);
+	*as = NULL;
 }

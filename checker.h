@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_elem.c                                        :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twalton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/04 22:00:07 by twalton           #+#    #+#             */
-/*   Updated: 2017/07/04 22:00:07 by twalton          ###   ########.fr       */
+/*   Created: 2017/07/05 17:45:39 by twalton           #+#    #+#             */
+/*   Updated: 2017/07/05 17:45:39 by twalton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#ifndef CHECKER_H
+# define CHECKER_H
 
-void	swap_elem(int *arr)
-{
-	int temp;
+# include "libft.h"
+# include <stdlib.h>
+# include <unistd.h>
 
-	if (arr[0] <= 1)
-		return ;
-	temp = arr[1];
-	arr[1] = arr[2];
-	arr[2] = temp;
-}
+# define MINT (-2147483648)
+
+char	**check_valid(char **strarr);
+void    does_solve(char **strarr, int *arr);
+int	*get_array(int ac, char **av);
+void	push_elem(int *arr, int *brr);
+char	**read_input(void);
+void	rot_elem(int *arr, char sign);
+void	swap_elem(int *arr);
+
+#endif

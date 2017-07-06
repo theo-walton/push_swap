@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_elem.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twalton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/04 22:00:07 by twalton           #+#    #+#             */
-/*   Updated: 2017/07/04 22:00:07 by twalton          ###   ########.fr       */
+/*   Created: 2017/06/07 16:02:24 by twalton           #+#    #+#             */
+/*   Updated: 2017/06/07 16:02:25 by twalton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include <string.h>
 
-void	swap_elem(int *arr)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	int temp;
+	size_t				i;
+	unsigned char		*new;
+	const unsigned char	*source;
 
-	if (arr[0] <= 1)
-		return ;
-	temp = arr[1];
-	arr[1] = arr[2];
-	arr[2] = temp;
+	new = dest;
+	source = src;
+	i = n;
+	while (i > 0)
+	{
+		*new = *source;
+		new++;
+		source++;
+		i--;
+	}
+	return (dest);
 }

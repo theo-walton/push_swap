@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_elem.c                                        :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twalton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/04 22:00:07 by twalton           #+#    #+#             */
-/*   Updated: 2017/07/04 22:00:07 by twalton          ###   ########.fr       */
+/*   Created: 2017/06/07 16:14:56 by twalton           #+#    #+#             */
+/*   Updated: 2017/06/07 16:14:57 by twalton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "libft.h"
+#include <stdlib.h>
 
-void	swap_elem(int *arr)
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	int temp;
+	int		i;
+	int		len;
+	char	*newstr;
 
-	if (arr[0] <= 1)
-		return ;
-	temp = arr[1];
-	arr[1] = arr[2];
-	arr[2] = temp;
+	i = 0;
+	len = ft_strlen(s);
+	newstr = malloc(sizeof(char) * (len + 1));
+	if (newstr == NULL)
+		return (NULL);
+	while (i < len)
+	{
+		newstr[i] = f(s[i]);
+		i++;
+	}
+	newstr[i] = '\0';
+	return (newstr);
 }

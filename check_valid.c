@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "checker.h"
+
 static int	is_line(char *str)
 {
 	if (str == NULL)
@@ -27,6 +29,19 @@ static int	is_line(char *str)
 	if (!ft_strcmp(str, "rrr"))
 		return (1);
 	return (-1);
+}
+
+static void	free_strarr(char **strarr)
+{
+	int i;
+
+	i = 0;
+	while(strarr[i])
+	{
+		free(strarr[i]);
+		++i;
+	}
+	free(strarr);
 }
 
 char	**check_valid(char **strarr)

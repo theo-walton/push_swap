@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_elem.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twalton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/04 22:00:07 by twalton           #+#    #+#             */
-/*   Updated: 2017/07/04 22:00:07 by twalton          ###   ########.fr       */
+/*   Created: 2017/06/07 16:09:56 by twalton           #+#    #+#             */
+/*   Updated: 2017/06/07 16:09:57 by twalton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
-
-void	swap_elem(int *arr)
+char	*ft_strcpy(char *dst, const char *src)
 {
-	int temp;
+	const char	*source;
+	char		*destination;
 
-	if (arr[0] <= 1)
-		return ;
-	temp = arr[1];
-	arr[1] = arr[2];
-	arr[2] = temp;
+	source = src;
+	destination = dst;
+	while (*source)
+	{
+		*destination = *source;
+		destination++;
+		source++;
+	}
+	*destination = '\0';
+	return (dst);
 }

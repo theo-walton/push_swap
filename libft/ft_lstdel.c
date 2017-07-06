@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_elem.c                                        :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twalton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/04 22:00:07 by twalton           #+#    #+#             */
-/*   Updated: 2017/07/04 22:00:07 by twalton          ###   ########.fr       */
+/*   Created: 2017/06/07 23:05:21 by twalton           #+#    #+#             */
+/*   Updated: 2017/06/07 23:05:22 by twalton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include <stdlib.h>
+#include "libft.h"
 
-void	swap_elem(int *arr)
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	int temp;
+	t_list *iter;
+	t_list *placehold;
 
-	if (arr[0] <= 1)
-		return ;
-	temp = arr[1];
-	arr[1] = arr[2];
-	arr[2] = temp;
+	iter = *alst;
+	while (iter)
+	{
+		placehold = iter->next;
+		del(iter, iter->content_size);
+		iter = placehold;
+	}
+	*alst = NULL;
 }

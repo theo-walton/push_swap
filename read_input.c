@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	**read_input(void);
+#include "checker.h"
+
+char	**read_input(void)
 {
 	char buff[2];
 	int toggle1;
@@ -26,7 +28,7 @@ char	**read_input(void);
 		read(0, buff + 1, 1);
 		if (buff[1] == '\0')
 			toggle2 = 1;
-		if (!toggle1 && !(ft_createstr(buff[1], 10)))
+		if (!toggle2 && !toggle1 && !(ft_createstr(buff[1], 10)))
 			toggle1 = 1;
 	}
 	if (toggle1)

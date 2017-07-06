@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "checker.h"
+
 static void	perform_action2(char *action, int *brr, int *arr)
 {
 	if (!ft_strcmp(action, "rb"))

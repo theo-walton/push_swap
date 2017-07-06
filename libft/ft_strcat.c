@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_elem.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twalton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/04 22:00:07 by twalton           #+#    #+#             */
-/*   Updated: 2017/07/04 22:00:07 by twalton          ###   ########.fr       */
+/*   Created: 2017/06/07 16:07:39 by twalton           #+#    #+#             */
+/*   Updated: 2017/06/07 16:07:40 by twalton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "libft.h"
 
-void	swap_elem(int *arr)
+char	*ft_strcat(char *s1, const char *s2)
 {
-	int temp;
+	char		*destend;
+	const char	*source;
 
-	if (arr[0] <= 1)
-		return ;
-	temp = arr[1];
-	arr[1] = arr[2];
-	arr[2] = temp;
+	source = s2;
+	destend = s1 + ft_strlen(s1);
+	while (*source)
+	{
+		*destend = *source;
+		destend++;
+		source++;
+	}
+	*destend = '\0';
+	return (s1);
 }

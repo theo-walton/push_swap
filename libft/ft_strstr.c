@@ -1,42 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rot_elem.c                                         :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twalton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/04 22:34:22 by twalton           #+#    #+#             */
-/*   Updated: 2017/07/04 22:34:22 by twalton          ###   ########.fr       */
+/*   Created: 2017/06/07 16:22:20 by twalton           #+#    #+#             */
+/*   Updated: 2017/06/07 16:22:21 by twalton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include <string.h>
+#include "libft.h"
 
-void	rot_elem(int *arr, char sign)
+char	*ft_strstr(const char *big, const char *little)
 {
-	int i;
-	int temp;
+	const char	*hay;
+	const char	*need;
+	size_t		needlen;
 
-	if (sign == '-')
+	needlen = ft_strlen(little);
+	if (needlen == 0)
+		return ((char*)big);
+	hay = big;
+	need = little;
+	while (1)
 	{
-		i = 1;
-		temp = arr[i];
-		while (i < arr[0])
+		hay = ft_strchr(hay, *need);
+		if (hay == NULL)
+			return (NULL);
+		if (ft_strncmp(hay, need, needlen) == 0)
 		{
-			arr[i] = arr[i + 1];
-			++i;
+			return ((char*)hay);
 		}
-		arr[i] = temp;
-	}
-	else
-	{
-		i  = arr[0];
-		temp = arr[i];
-		while (i > 1)
-		{
-			arr[i] = arr[i - 1];
-			--i;
-		}
-		arr[i] = temp;
+		hay++;
 	}
 }

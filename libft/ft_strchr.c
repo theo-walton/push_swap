@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_elem.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twalton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/04 22:00:07 by twalton           #+#    #+#             */
-/*   Updated: 2017/07/04 22:00:07 by twalton          ###   ########.fr       */
+/*   Created: 2017/06/07 16:08:24 by twalton           #+#    #+#             */
+/*   Updated: 2017/06/07 16:08:26 by twalton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include <string.h>
 
-void	swap_elem(int *arr)
+char	*ft_strchr(const char *s, int c)
 {
-	int temp;
+	const char *str;
 
-	if (arr[0] <= 1)
-		return ;
-	temp = arr[1];
-	arr[1] = arr[2];
-	arr[2] = temp;
+	if (!s)
+		return (NULL);
+	str = s;
+	while (*str != c && *str != '\0')
+		str++;
+	if (*str == '\0' && c != 0)
+		return (NULL);
+	return ((char*)str);
 }

@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_elem.c                                        :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twalton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/04 22:00:07 by twalton           #+#    #+#             */
-/*   Updated: 2017/07/04 22:00:07 by twalton          ###   ########.fr       */
+/*   Created: 2017/06/07 16:23:19 by twalton           #+#    #+#             */
+/*   Updated: 2017/06/07 16:23:20 by twalton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include <stdlib.h>
 
-void	swap_elem(int *arr)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	int temp;
+	size_t	i;
+	char	*newstr;
 
-	if (arr[0] <= 1)
-		return ;
-	temp = arr[1];
-	arr[1] = arr[2];
-	arr[2] = temp;
+	i = 0;
+	newstr = malloc(sizeof(char) * (len + 1));
+	if (newstr == NULL)
+		return (NULL);
+	while (i < len)
+	{
+		newstr[i] = s[(unsigned int)i + start];
+		i++;
+	}
+	newstr[i] = '\0';
+	return (newstr);
 }
