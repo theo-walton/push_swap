@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
 static void	rot_n_times(int *arr, int *op_arr, char sign, char stack)
 {
 	while (arr[1] < arr[2])
@@ -18,7 +20,7 @@ static void	rot_n_times(int *arr, int *op_arr, char sign, char stack)
 		if (sign == '+')
 		{
 			op_arr[op_arr[0] + 1] = (stack - 'a') * 2 + 4;
-			op_ar[0]++;
+			op_arr[0]++;
 		}
 		else
 		{

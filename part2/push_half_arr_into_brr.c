@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
 void	push_half_arr_into_brr(int *arr, int *brr, int *op_arr)
 {
 	

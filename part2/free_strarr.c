@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   combine_actions.c                                  :+:      :+:    :+:   */
+/*   free_strarr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twalton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/06 23:37:32 by twalton           #+#    #+#             */
-/*   Updated: 2017/07/06 23:37:32 by twalton          ###   ########.fr       */
+/*   Created: 2017/07/07 23:33:27 by twalton           #+#    #+#             */
+/*   Updated: 2017/07/07 23:33:27 by twalton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	combine_actions(int *op_arr)
+void	free_strarr(char **strarr)
 {
-	if (op_arr)
-		return ;
-	else
-		return ;
+	int i;
+
+	i = 0;
+	while (strarr[i])
+		free(strarr[i++]);
+	free(strarr);
 }

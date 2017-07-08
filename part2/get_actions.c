@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
 static void	free_the_strings(char **strarr, int fail_index)
 {
 	int i;
@@ -43,6 +45,7 @@ static char	*translate_ops(int op_num)
                 return (ft_strdup("pa"));
 	if (op_num == 9)
                 return (ft_strdup(""));
+	return (NULL);
 }
 
 char	**get_actions(int *arr)
@@ -58,7 +61,7 @@ char	**get_actions(int *arr)
 	strarr = malloc(sizeof(char*) * (op_arr[0] - 2));
 	while (i[1] < op_arr[0])
 	{
-		while (op_arr[i[1] == -1)
+		while (op_arr[i[1]] == -1)
 			++i[1];
 		if (!(strarr[i[0]] = translate_ops(op_arr[i[1] + 1])))
 		{
@@ -68,6 +71,6 @@ char	**get_actions(int *arr)
 		++i[0];
 		++i[1];
 	}
-	strarr[i[0]] == NULL;
+	strarr[i[0]] = NULL;
 	return (strarr);
 }

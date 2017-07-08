@@ -10,13 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
 void	combine_sorted_arrays(int *arr, int *brr, int *op_arr)
 {
 	while (brr[0] != 0)
 	{
 		while (arr[1] < brr[1])
 		{
-			rot_elem(arr, "-");
+			rot_elem(arr, '-');
 			op_arr[op_arr[0] + 1] = 5;
 			++op_arr[0];
 		}

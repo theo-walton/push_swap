@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   combine_actions.c                                  :+:      :+:    :+:   */
+/*   put_actions.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twalton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/06 23:37:32 by twalton           #+#    #+#             */
-/*   Updated: 2017/07/06 23:37:32 by twalton          ###   ########.fr       */
+/*   Created: 2017/07/07 23:30:24 by twalton           #+#    #+#             */
+/*   Updated: 2017/07/07 23:30:24 by twalton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	combine_actions(int *op_arr)
+void	put_actions(char **strarr)
 {
-	if (op_arr)
-		return ;
-	else
-		return ;
+	int i;
+
+	i = 0;
+	while (strarr[i])
+	{
+		ft_putstr(strarr[i++]);
+		write(1, "\n", 1);
+	}
 }

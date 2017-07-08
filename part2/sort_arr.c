@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
 static void	create_seperator(int *op_arr)
 {
 	op_arr[op_arr[0] + 1] = -1;
