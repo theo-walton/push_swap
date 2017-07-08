@@ -10,6 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+static void	create_seperator(int *op_arr)
+{
+	op_arr[op_arr[0] + 1] = -1;
+	op_arr[0]++;
+}
+
 static void	makezero(int *op_arr)
 {
 	int i;
@@ -31,8 +37,11 @@ int	*sort_arr(int *arr)
 		return (NULL);
 	brr[0] = 0;
 	push_half_arr_into_brr(arr, brr, op_arr);
-	bubble_sort(arr, op_arr);
-	bubble_sort(brr, op_arr);
+	create_seperator(op_arr);
+	bubble_sort(arr, op_arr, 'a');
+	create_seperator(op_arr);
+	bubble_sort(brr, op_arr, 'b');
+	create_seperator(op_arr);
 	combine_actions(op_arr);
 	combine_sorted_arrays(arr, brr, op_arr);
 	return (op_arr);
