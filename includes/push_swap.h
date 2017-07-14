@@ -36,5 +36,6 @@ int	find_elem_to_insert(int *arr, int *brr);
 void	insert_elem(int *arr, int *brr, int i, int *op_arr);
 void	insert_b(int *arr, int *brr, int *op_arr);
 void	rot_n(int *arr, int f_rot, int b_rot);
+int	is_rot_sort(int *arr);
 
 #endif

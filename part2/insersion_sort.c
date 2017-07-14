@@ -100,19 +100,20 @@ void	insersion_sort(int *arr, int *brr, int *op_arr)
 	int index;
 
 	index = 0;
-	if (!is_sort(arr))
+	if (!is_rot_sort(arr))
 	{
 		push_elem(brr, arr);
 		while (op_arr[index])
 			index++;
 		op_arr[index] = 5;
 	}
-	while (!is_sort(arr))
+	while (!is_rot_sort(arr))
 	{
 		index = find_elem_to_insert(arr, brr);
 		insert_elem(arr, brr, index, op_arr);
 	}
-	allign_b(brr, op_arr);
+	if (brr[0])
+		allign_b(brr, op_arr);
 	while (brr[0])
 		insert_b(arr, brr, op_arr);
 	allign_a(arr, op_arr);
