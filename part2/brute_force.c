@@ -1,24 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_half_arr_into_brr.c                           :+:      :+:    :+:   */
+/*   brute_force.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twalton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/06 02:24:53 by twalton           #+#    #+#             */
-/*   Updated: 2017/07/06 02:24:53 by twalton          ###   ########.fr       */
+/*   Created: 2017/07/08 22:32:38 by twalton           #+#    #+#             */
+/*   Updated: 2017/07/08 22:32:38 by twalton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_half_arr_into_brr(int *arr, int *brr, int *op_arr)
+static void	get_next_ops(int *op_arr)
 {
-	
-	while (arr[0] - brr[0] > 1)
+	int i;
+
+	i = 0;
+	while (op_arr[i] == 11)
+		i++;
+	op_arr[i]++;
+	while (i > 0)
+		op_arr[--i] = 1;
+}
+
+int	brute_force(int *arr, int *brr, int *op_arr)
+{
+	int i;
+
+	i = 0;
+	while (!will_solve(arr, brr, op_arr) && i++ < 1771561)
 	{
-		push_elem(brr, arr);
-		op_arr[op_arr[0] + 1] = 1;
-		op_arr[0]++;
+		brr[0] = 0;
+		get_next_ops(op_arr);
 	}
+	if (i >= 1771560)
+	{
+		brr[0] = 0;
+		return (0);
+	}
+	return (1);
 }

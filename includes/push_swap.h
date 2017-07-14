@@ -18,19 +18,23 @@
 # include <stdlib.h>
 
 # define MINT (-2147483648)
+# define MAXT (2147483647)
 
 int	*get_array(int ac, char **av);
 void	push_elem(int *arr, int *brr);
 void	rot_elem(int *arr, char sign);
 void	swap_elem(int *arr);
 char	**get_actions(int *arr);
-void	combine_actions(int *op_arr);
-void	bubble_sort(int *arr, int *op_arr, char stack);
-void	combine_sorted_arrays(int *arr, int *brr, int *op_arr);
 int	is_sort(int *arr);
-void	push_half_arr_into_brr(int *arr, int *brr, int *op_arr);
 int	*sort_arr(int *arr);
 void	free_strarr(char **strarr);
 void	put_actions(char **strarr);
+int	brute_force(int *arr, int *brr, int *op_arr);
+int	will_solve(int *arr, int *brr, int *op_arr);
+void	insersion_sort(int *arr, int *brr, int *op_arr);
+int	find_elem_to_insert(int *arr, int *brr);
+void	insert_elem(int *arr, int *brr, int i, int *op_arr);
+void	insert_b(int *arr, int *brr, int *op_arr);
+void	rot_n(int *arr, int f_rot, int b_rot);
 
 #endif

@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   combine_sorted_arrays.c                            :+:      :+:    :+:   */
+/*   push_half_arr_into_brr.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twalton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/07 20:51:06 by twalton           #+#    #+#             */
-/*   Updated: 2017/07/07 20:51:06 by twalton          ###   ########.fr       */
+/*   Created: 2017/07/06 02:24:53 by twalton           #+#    #+#             */
+/*   Updated: 2017/07/06 02:24:53 by twalton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
-void	combine_sorted_arrays(int *arr, int *brr, int *op_arr)
+void	push_half_arr_into_brr(int *arr, int *brr, int *op_arr)
 {
-	while (brr[0] != 0)
+	
+	while (arr[0] - brr[0] > 1)
 	{
-		while (arr[1] < brr[1])
-		{
-			rot_elem(arr, '-');
-			op_arr[op_arr[0] + 1] = 5;
-			++op_arr[0];
-		}
-		while (arr[1] > brr[1])
-		{
-			push_elem(arr, brr);
-			op_arr[op_arr[0] + 1] = 8;
-			++op_arr[0];
-		}
+		push_elem(brr, arr);
+		op_arr[op_arr[0] + 1] = 1;
+		op_arr[0]++;
+		printf("%d, %d : %d, %d\n", arr[0], brr[0], arr[1], brr[1]);
 	}
 }

@@ -1,41 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_arr.c                                         :+:      :+:    :+:   */
+/*   rot_n.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twalton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/05 23:19:43 by twalton           #+#    #+#             */
-/*   Updated: 2017/07/05 23:19:43 by twalton          ###   ########.fr       */
+/*   Created: 2017/07/11 11:30:28 by twalton           #+#    #+#             */
+/*   Updated: 2017/07/11 11:30:28 by twalton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	makezero(int *op_arr)
+void	rot_n(int *arr, int f_rot, int b_rot)
 {
-	int i;
-
-	i = 0;
-	while (i < 100000)
-		op_arr[i++] = 0;
-}
-
-int	*sort_arr(int *arr)
-{
-	int *brr;
-	int *op_arr;
-
-	if (!(op_arr = malloc(sizeof(int) * (100000))))
-		return (NULL);
-	makezero(op_arr);
-	if (!(brr = malloc(sizeof(int) * (arr[0] + 1))))
-		return (NULL);
-	brr[0] = 0;
-	if (!brute_force(arr, brr, op_arr))
+	while (f_rot)
 	{
-		makezero(op_arr);
-		insersion_sort(arr, brr, op_arr);
+		rot_elem(arr, '+');
+		f_rot--;
 	}
-	return (op_arr);
+	while (b_rot)
+	{
+		rot_elem(arr, '-');
+		b_rot--;
+	}
 }

@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 static void	rot_n_times(int *arr, int *op_arr, char sign, char stack)
 {
@@ -63,5 +64,6 @@ void	bubble_sort(int *arr, int *op_arr, char stack)
 		swap_elem(arr);
 		op_arr[op_arr[0] + 1] = (stack - 'a') + 2;
 		op_arr[0]++;
+		write(1, "not\n", 4);
 	}
 }

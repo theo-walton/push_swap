@@ -25,7 +25,13 @@ void	push_elem(int *arr, int *brr)
 		--i;
 	}
 	arr[1] = brr[1];
-	brr[1] = MINT;
+	i = 1;
+	while (i < brr[0])
+	{
+		brr[i] = brr[i + 1];
+		++i;
+	}
+	brr[brr[0]] = MINT;
 	++arr[0];
 	--brr[0];
 }
