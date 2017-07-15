@@ -86,7 +86,7 @@ static int	check_trivia(int *op_arr)
 	return (0);
 }
 
-int	will_solve(int *arr, int *brr, int *op_arr)
+int			will_solve(int *arr, int *brr, int *op_arr)
 {
 	int i;
 	int temp[arr[0] + 1];

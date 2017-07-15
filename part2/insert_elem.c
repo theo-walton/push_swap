@@ -63,7 +63,7 @@ static void	take_note_of_ops2(int *op_arr, int *b_rot, int i)
 	int toggle;
 	int temp;
 
-        toggle = 0;
+	toggle = 0;
 	if (b_rot[0] < b_rot[1])
 		temp = b_rot[0];
 	else
@@ -109,14 +109,16 @@ static void	take_note_of_ops(int *op_arr, int *f_rot, int *b_rot)
 	take_note_of_ops2(op_arr, b_rot, i);
 }
 
-void	insert_elem(int *arr, int *brr, int i, int *op_arr)
+void		insert_elem(int *arr, int *brr, int i, int *op_arr)
 {
 	int f_rot[2];
 	int b_rot[2];
 	int j;
 
-	if ((f_rot[0] = 0) || (f_rot[1] = 0) || (b_rot[0] = 0) || (b_rot[1] = 0))
-		return ;
+	f_rot[0] = 0;
+	f_rot[1] = 0;
+	b_rot[0] = 0;
+	b_rot[1] = 0;
 	if (i > (arr[0] + 1) / 2)
 		f_rot[0] = arr[0] - i + 1;
 	else

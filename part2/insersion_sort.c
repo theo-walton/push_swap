@@ -60,23 +60,17 @@ static void	allign_a(int *arr, int *op_arr)
 	}
 }
 
-static void	allign_b(int *brr, int *op_arr)
+static void	allign_b(int *brr, int *op_arr, int i, int k)
 {
-	int i;
 	int max[2];
-	int k;
 
-	i = 0;
-	k = 0;
 	while (op_arr[i])
 		i++;
 	max[0] = brr[1];
 	max[1] = 1;
 	while (++k <= brr[0])
-	{
 		if (max[0] < brr[k] && (max[1] = k))
 			max[0] = brr[k];
-	}
 	if (max[1] > (brr[0] + 1) / 2)
 	{
 		while (max[1]++ <= brr[0])
@@ -95,7 +89,7 @@ static void	allign_b(int *brr, int *op_arr)
 	}
 }
 
-void	insersion_sort(int *arr, int *brr, int *op_arr)
+void		insersion_sort(int *arr, int *brr, int *op_arr)
 {
 	int index;
 
@@ -113,7 +107,7 @@ void	insersion_sort(int *arr, int *brr, int *op_arr)
 		insert_elem(arr, brr, index, op_arr);
 	}
 	if (brr[0])
-		allign_b(brr, op_arr);
+		allign_b(brr, op_arr, 0, 0);
 	while (brr[0])
 		insert_b(arr, brr, op_arr);
 	allign_a(arr, op_arr);

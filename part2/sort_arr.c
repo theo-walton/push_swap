@@ -21,7 +21,7 @@ static void	makezero(int *op_arr)
 		op_arr[i++] = 0;
 }
 
-int	*sort_arr(int *arr)
+int			*sort_arr(int *arr)
 {
 	int *brr;
 	int *op_arr;

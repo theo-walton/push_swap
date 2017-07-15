@@ -24,7 +24,7 @@ static void	get_next_ops(int *op_arr)
 		op_arr[--i] = 1;
 }
 
-int	brute_force(int *arr, int *brr, int *op_arr)
+int			brute_force(int *arr, int *brr, int *op_arr)
 {
 	int i;
 

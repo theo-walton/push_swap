@@ -58,7 +58,7 @@ static int	find_index_to_rot(int *brr, int x)
 	return (min_ind);
 }
 
-void	insert_b(int *arr, int *brr, int *op_arr)
+void		insert_b(int *arr, int *brr, int *op_arr)
 {
 	int index;
 	int i;

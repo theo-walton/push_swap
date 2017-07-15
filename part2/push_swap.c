@@ -69,10 +69,10 @@ static int	error_management(int *arr)
 	return (more_error_management(arr));
 }
 
-int	main(int ac, char **av)
+int			main(int ac, char **av)
 {
-	int *arr;
-	char **strarr;
+	int		*arr;
+	char	**strarr;
 
 	if (!(arr = get_array(ac, av)))
 	{

@@ -20,7 +20,7 @@ int	is_rot_sort(int *arr)
 	while (i < arr[0])
 	{
 		if (arr[i] > arr[i + 1])
-			break;
+			break ;
 		++i;
 	}
 	++i;

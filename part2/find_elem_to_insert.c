@@ -52,7 +52,7 @@ static int	rot_count(int *arr, int *brr, int i)
 	return (b_rot + f_rot);
 }
 
-int	find_elem_to_insert(int *arr, int *brr)
+int			find_elem_to_insert(int *arr, int *brr)
 {
 	int i;
 	int best[2];

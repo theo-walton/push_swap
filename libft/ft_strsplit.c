@@ -71,7 +71,8 @@ char		**ft_strsplit(char const *s, char c)
 	int		placehold;
 	char	**strarr;
 
-	w[1] = countwords(s, c);
+	if (!s || (w[1] = countwords(s, c)) < 0)
+		return (NULL);
 	strarr = malloc(sizeof(char*) * (w[1] + 1));
 	i = 0;
 	w[0] = 0;

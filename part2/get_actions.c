@@ -30,21 +30,21 @@ static char	*translate_ops(int op_num)
 	if (op_num == 1)
 		return (ft_strdup("sa"));
 	if (op_num == 2)
-                return (ft_strdup("sb"));
+		return (ft_strdup("sb"));
 	if (op_num == 3)
-                return (ft_strdup("ss"));
+		return (ft_strdup("ss"));
 	if (op_num == 4)
-                return (ft_strdup("pa"));
+		return (ft_strdup("pa"));
 	if (op_num == 5)
-                return (ft_strdup("pb"));
+		return (ft_strdup("pb"));
 	if (op_num == 6)
-                return (ft_strdup("ra"));
+		return (ft_strdup("ra"));
 	if (op_num == 7)
-                return (ft_strdup("rb"));
+		return (ft_strdup("rb"));
 	if (op_num == 8)
-                return (ft_strdup("rr"));
+		return (ft_strdup("rr"));
 	if (op_num == 9)
-                return (ft_strdup("rra"));
+		return (ft_strdup("rra"));
 	if (op_num == 10)
 		return (ft_strdup("rrb"));
 	if (op_num == 11)
@@ -62,11 +62,11 @@ static int	op_len_plus_1(int *op_arr)
 	return (i + 1);
 }
 
-char	**get_actions(int *arr)
+char		**get_actions(int *arr)
 {
-	int *op_arr;
-	char **strarr;
-	int i;
+	int		*op_arr;
+	char	**strarr;
+	int		i;
 
 	i = 0;
 	if (!(op_arr = sort_arr(arr)))
