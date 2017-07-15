@@ -21,6 +21,7 @@
 # define MAXT (2147483647)
 
 int	*get_array(int ac, char **av);
+int	*get_single_arg_arr(char *str);
 void	push_elem(int *arr, int *brr);
 void	rot_elem(int *arr, char sign);
 void	swap_elem(int *arr);

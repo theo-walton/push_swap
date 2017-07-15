@@ -26,5 +26,6 @@ void	push_elem(int *arr, int *brr);
 char	**read_input(void);
 void	rot_elem(int *arr, char sign);
 void	swap_elem(int *arr);
+int	*get_single_arg_arr(char *str);
 
 #endif

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_array.c                                        :+:      :+:    :+:   */
+/*   get_single_arg_arr.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twalton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/04 23:13:11 by twalton           #+#    #+#             */
-/*   Updated: 2017/07/04 23:13:11 by twalton          ###   ########.fr       */
+/*   Created: 2017/07/14 21:03:51 by twalton           #+#    #+#             */
+/*   Updated: 2017/07/14 21:03:51 by twalton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,29 +69,28 @@ static void	check_for_duplicates(int *arr)
 	}
 }
 
-int	*get_array(int ac, char **av)
+int	*get_single_arg_arr(char *str)
 {
-	int *arr;
+	char **strarr;
 	int i;
+	int *arr;
 
-	if (ac == 2 && ft_strchr(av[1], ' '))
-		return (get_single_arg_arr(av[1]));
-	if (!(arr = malloc(sizeof(int) * ac)))
+	if (!(strarr = ft_strsplit(str, ' ')))
 		return (NULL);
-	if (ac <= 1)
+	i = 0;
+	while (strarr[i])
+		++i;
+	if (!(arr = malloc(sizeof(int) * (i + 1))))
+		return (NULL);
+	i = 0;
+	while (strarr[i])
 	{
-		arr[0] = -2;
-		return (arr);
-	}
-	i = 1;
-	while (i < ac)
-	{
-		if ((arr[0] = is_valid_arg(av[i])) <= 0)
+		if ((arr[0] = is_valid_arg(strarr[i])) <= 0)
 			return (arr);
-		arr[i] = ft_atoi(av[i]);
+		arr[i] = ft_atoi(strarr[i]);
 		++i;
 	}
-	arr[0] = ac - 1;
+	arr[0] = i;
 	check_for_duplicates(arr);
 	return (arr);
 }
