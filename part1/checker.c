@@ -69,10 +69,12 @@ static int	error_management(int *arr)
 	return (more_error_management(arr));
 }
 
-int	main(int ac, char **av)
+int			main(int ac, char **av)
 {
 	int *arr;
 
+	if (ac == 3 && !ft_strcmp(av[1], "reverse"))
+		return (manage_reverse(av));
 	if (!(arr = get_array(ac, av)))
 	{
 		write(2, "Memory Allocation Failed\n", 25);

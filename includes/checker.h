@@ -19,6 +19,8 @@
 
 # define MINT (-2147483648)
 
+int	manage_reverse(char **av);
+int	perform_actions_on_array(char **strarr, int *arr);
 char	**check_valid(char **strarr);
 void    does_solve(char **strarr, int *arr);
 int	*get_array(int ac, char **av);

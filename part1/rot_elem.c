@@ -30,7 +30,7 @@ void	rot_elem(int *arr, char sign)
 	}
 	else
 	{
-		i  = arr[0];
+		i = arr[0];
 		temp = arr[i];
 		while (i > 1)
 		{

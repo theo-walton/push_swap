@@ -69,11 +69,11 @@ static void	check_for_duplicates(int *arr)
 	}
 }
 
-int	*get_single_arg_arr(char *str)
+int			*get_single_arg_arr(char *str)
 {
-	char **strarr;
-	int i;
-	int *arr;
+	char	**strarr;
+	int		i;
+	int		*arr;
 
 	if (!(strarr = ft_strsplit(str, ' ')))
 		return (NULL);

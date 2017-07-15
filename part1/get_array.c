@@ -69,7 +69,7 @@ static void	check_for_duplicates(int *arr)
 	}
 }
 
-int	*get_array(int ac, char **av)
+int			*get_array(int ac, char **av)
 {
 	int *arr;
 	int i;

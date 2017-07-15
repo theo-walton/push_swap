@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   does_solve.c                                       :+:      :+:    :+:   */
+/*   perform_actions_on_array.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twalton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/04 20:27:24 by twalton           #+#    #+#             */
-/*   Updated: 2017/07/04 20:27:24 by twalton          ###   ########.fr       */
+/*   Created: 2017/07/14 23:08:30 by twalton           #+#    #+#             */
+/*   Updated: 2017/07/14 23:08:30 by twalton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,28 +53,6 @@ static void	perform_action(char *action, int *brr, int *arr)
 		perform_action2(action, brr, arr);
 }
 
-static void	check_if_solved(int *brr, int *arr)
-{
-	int i;
-
-	i = 1;
-	if (brr[0])
-	{
-		write(1, "KO\n", 3);
-		return ;
-	}
-	while (i < arr[0])
-	{
-		if (arr[i] >= arr[i + 1])
-		{
-			write(1, "KO\n", 3);
-			return ;
-		}
-		i++;
-	}
-	write(1, "OK\n", 3);
-}
-
 static void	strarr_free(char **strarr)
 {
 	int i;
@@ -85,17 +63,22 @@ static void	strarr_free(char **strarr)
 	free(strarr);
 }
 
-void		does_solve(char **strarr, int *arr)
+int			perform_actions_on_array(char **strarr, int *arr)
 {
 	int brr[arr[0] + 1];
 	int i;
 
 	if (strarr == NULL)
-		return ;
+		return (0);
 	i = 0;
 	brr[0] = 0;
 	while (strarr[i])
 		perform_action(strarr[i++], brr, arr);
-	check_if_solved(brr, arr);
 	strarr_free(strarr);
+	if (brr[0] != 0)
+	{
+		write(1, "Not all elements are in A\n", 26);
+		return (0);
+	}
+	return (1);
 }

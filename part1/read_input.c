@@ -22,9 +22,9 @@ void	check_newline(char c, char d)
 
 char	**read_input(void)
 {
-	char buff[2];
-	int toggle1;
-	int toggle2;
+	char	buff[2];
+	int		toggle1;
+	int		toggle2;
 
 	toggle1 = 0;
 	toggle2 = 0;

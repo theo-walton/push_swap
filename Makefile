@@ -18,7 +18,8 @@ SRC1 = part1/checker.c part1/does_solve.c part1/push_elem.c part1/rot_elem.c par
 part1/get_array.c part1/read_input.c part1/swap_elem.c libft/ft_isdigit.c libft/ft_atoi.c \
 libft/ft_strsplit.c libft/ft_createstr.c libft/ft_strcmp.c libft/ft_strnew.c libft/ft_strlen.c \
 libft/ft_strcpy.c libft/ft_bzero.c libft/ft_memset.c part1/get_single_arg_arr.c \
-libft/ft_strchr.c
+libft/ft_strchr.c part1/manage_reverse.c part1/perform_actions_on_array.c \
+libft/ft_putnbr.c libft/ft_putnbr_fd.c libft/ft_putchar_fd.c
 
 SRC2 = part1/push_elem.c part1/rot_elem.c part2/get_actions.c \
 part1/get_array.c part1/swap_elem.c libft/ft_isdigit.c libft/ft_atoi.c \

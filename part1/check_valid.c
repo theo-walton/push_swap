@@ -36,7 +36,7 @@ static void	free_strarr(char **strarr)
 	int i;
 
 	i = 0;
-	while(strarr[i])
+	while (strarr[i])
 	{
 		free(strarr[i]);
 		++i;
@@ -44,7 +44,7 @@ static void	free_strarr(char **strarr)
 	free(strarr);
 }
 
-char	**check_valid(char **strarr)
+char		**check_valid(char **strarr)
 {
 	int i;
 
