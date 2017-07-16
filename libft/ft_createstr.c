@@ -32,7 +32,6 @@ char		*ft_createstr(char c, int chunk_size)
 	static char	*str;
 	static int	i;
 
-
 	if (c == '\0')
 		return (str);
 	if (chunk_size <= 0)

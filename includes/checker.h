@@ -19,15 +19,15 @@
 
 # define MINT (-2147483648)
 
-int	manage_reverse(char **av);
-int	perform_actions_on_array(char **strarr, int *arr);
+int		manage_reverse(char **av);
+int		perform_actions_on_array(char **strarr, int *arr);
 char	**check_valid(char **strarr);
-void    does_solve(char **strarr, int *arr);
-int	*get_array(int ac, char **av);
+void	does_solve(char **strarr, int *arr);
+int		*get_array(int ac, char **av);
 void	push_elem(int *arr, int *brr);
 char	**read_input(void);
 void	rot_elem(int *arr, char sign);
 void	swap_elem(int *arr);
-int	*get_single_arg_arr(char *str);
+int		*get_single_arg_arr(char *str);
 
 #endif

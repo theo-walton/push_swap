@@ -14,6 +14,8 @@ NAME1 = checker
 
 NAME2 = push_swap
 
+NAME3 = random
+
 SRC1 = part1/checker.c part1/does_solve.c part1/push_elem.c part1/rot_elem.c part1/check_valid.c \
 part1/get_array.c part1/read_input.c part1/swap_elem.c libft/ft_isdigit.c libft/ft_atoi.c \
 libft/ft_strsplit.c libft/ft_createstr.c libft/ft_strcmp.c libft/ft_strnew.c libft/ft_strlen.c \
@@ -31,6 +33,9 @@ part2/insersion_sort.c part2/find_elem_to_insert.c part2/insert_elem.c \
 part2/insert_b.c part2/rot_n.c part2/is_rot_sort.c part1/get_single_arg_arr.c \
 libft/ft_strchr.c
 
+SRC3 = rand_gen/create_rand.c libft/ft_putnbr_fd.c libft/ft_putnbr.c libft/ft_putchar_fd.c \
+libft/ft_atoi.c
+
 OBJ = objects/*.o
 
 HEADERS = -I includes/.
@@ -46,6 +51,11 @@ $(NAME1):
 	gcc -Wall -Wextra -Werror -c $(SRC2) $(HEADERS)
 	mv *.o objects
 	gcc $(OBJ) -o $(NAME2)
+
+3:
+	gcc -Wall -Wextra -Werror -c $(SRC3) $(HEADERS)
+	mv *.o objects
+	gcc $(OBJ) -o $(NAME3)
 
 clean:
 	rm -rf objects/*.o

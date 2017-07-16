@@ -22,6 +22,8 @@ static int	check_str(char *str)
 	while (str[++i])
 		if (!ft_isdigit(str[i]))
 			return (0);
+	if (ft_atoi(str) == 0)
+		return (0);
 	return (1);
 }
 
