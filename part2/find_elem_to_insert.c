@@ -12,23 +12,49 @@
 
 #include "push_swap.h"
 
-static int	b_index(int *brr, int x)
+static int	get_max_ind(int *brr)
 {
+	int i;
 	int max;
 	int max_ind;
-	int i;
 
 	i = 1;
-	max = MINT;
+	max_ind = 1;
+	max = brr[1];
 	while (i <= brr[0])
 	{
-		if (brr[i] < x && brr[i] > max)
+		if (brr[i] > max)
 		{
 			max = brr[i];
 			max_ind = i;
 		}
 		i++;
 	}
+	return (max_ind);
+}
+
+static int	b_index(int *brr, int x)
+{
+	int max;
+	int max_ind;
+	int i;
+	int toggle;
+
+	i = 1;
+	toggle = 0;
+	max = MINT;
+	while (i <= brr[0])
+	{
+		if (brr[i] < x && brr[i] > max)
+		{
+			toggle = 1;
+			max = brr[i];
+			max_ind = i;
+		}
+		i++;
+	}
+	if (!toggle)
+		max_ind = get_max_ind(brr);
 	return (max_ind);
 }
 

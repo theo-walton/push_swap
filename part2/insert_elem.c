@@ -42,7 +42,7 @@ static int	b_index(int *brr, int x)
 
 	i = 1;
 	toggle = 0;
-	max = brr[1];
+	max = MINT;
 	while (i <= brr[0])
 	{
 		if (brr[i] < x && brr[i] > max)
