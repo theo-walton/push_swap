@@ -44,24 +44,24 @@ HEADERS = -I includes/.
 all: 1 2 3
 
 1:	
-	gcc -Wall -Wextra -Werror -c $(SRC1) $(HEADERS)
-	mv *.o objects
-	gcc -Wall -Wextra -Werror $(SRC1) $(HEADERS) -o $(NAME1)
+	@gcc -Wall -Wextra -Werror -c $(SRC1) $(HEADERS)
+	@mv *.o objects
+	@gcc -Wall -Wextra -Werror $(SRC1) $(HEADERS) -o $(NAME1)
 
 2:
-	gcc -Wall -Wextra -Werror -c $(SRC2) $(HEADERS)
-	mv *.o objects
-	gcc -Wall -Wextra -Werror $(SRC2) $(HEADERS) -o $(NAME2)
+	@gcc -Wall -Wextra -Werror -c $(SRC2) $(HEADERS)
+	@mv *.o objects
+	@gcc -Wall -Wextra -Werror $(SRC2) $(HEADERS) -o $(NAME2)
 
 3:
-	gcc -Wall -Wextra -Werror -c $(SRC3) $(HEADERS)
-	mv *.o objects
-	gcc -Wall -Wextra -Werror $(SRC3) $(HEADERS) -o $(NAME3)
+	@gcc -Wall -Wextra -Werror -c $(SRC3) $(HEADERS)
+	@mv *.o objects
+	@gcc -Wall -Wextra -Werror $(SRC3) $(HEADERS) -o $(NAME3)
 
 clean:
-	rm -rf objects/*.o
+	@rm -rf objects/*.o
 
 fclean: clean
-	rm -rf $(NAME1) $(NAME2) $(NAME3)
+	@rm -rf $(NAME1) $(NAME2) $(NAME3)
 
 re: fclean all
