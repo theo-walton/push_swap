@@ -41,22 +41,22 @@ OBJ = objects/*.o
 
 HEADERS = -I includes/.
 
-all: $(NAME1)
+all: 1 2 3
 
-$(NAME1):
+1:	
 	gcc -Wall -Wextra -Werror -c $(SRC1) $(HEADERS)
 	mv *.o objects
-	gcc $(OBJ) -o $(NAME1)
+	gcc -Wall -Wextra -Werror $(SRC1) $(HEADERS) -o $(NAME1)
 
 2:
 	gcc -Wall -Wextra -Werror -c $(SRC2) $(HEADERS)
 	mv *.o objects
-	gcc $(OBJ) -o $(NAME2)
+	gcc -Wall -Wextra -Werror $(SRC2) $(HEADERS) -o $(NAME2)
 
 3:
 	gcc -Wall -Wextra -Werror -c $(SRC3) $(HEADERS)
 	mv *.o objects
-	gcc $(OBJ) -o $(NAME3)
+	gcc -Wall -Wextra -Werror $(SRC3) $(HEADERS) -o $(NAME3)
 
 clean:
 	rm -rf objects/*.o
