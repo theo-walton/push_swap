@@ -31,9 +31,10 @@ part2/is_sort.c	part2/sort_arr.c part2/push_swap.c part2/will_solve.c part2/brut
 part2/free_strarr.c part2/put_actions.c libft/ft_putstr.c libft/ft_putstr_fd.c \
 part2/insersion_sort.c part2/find_elem_to_insert.c part2/insert_elem.c \
 part2/insert_b.c part2/rot_n.c part2/is_rot_sort.c part1/get_single_arg_arr.c \
-libft/ft_strchr.c libft/ft_putnbr.c libft/ft_putnbr_fd.c libft/ft_putchar_fd.c
+libft/ft_strchr.c libft/ft_putnbr.c libft/ft_putnbr_fd.c libft/ft_putchar_fd.c \
+part2/pre_process.c libft/ft_memcpy.c libft/ft_sort.c
 
-SRC3 = rand_gen/create_rand.c libft/ft_putnbr_fd.c libft/ft_putnbr.c libft/ft_putchar_fd.c \
+SRC3 = generator/create_rand.c libft/ft_putnbr_fd.c libft/ft_putnbr.c libft/ft_putchar_fd.c \
 libft/ft_atoi.c
 
 OBJ = objects/*.o

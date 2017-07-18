@@ -29,20 +29,20 @@ static int	has_been_taken(int x, int *taken)
 	return (0);
 }
 
-static void	print_arr(int *arr, int size)
+static void	print_arr(int *arr, int size, int start_int)
 {
 	int i;
 
 	i = 0;
 	while (i < size)
 	{
-		ft_putnbr(arr[i]);
+		ft_putnbr(arr[i] + start_int);
 		write(1, " ", 1);
 		i++;
 	}
 }
 
-static void	print_random(int size)
+static void	print_random(int size, int start_int)
 {
 	int i;
 	int arr[size];
@@ -61,12 +61,15 @@ static void	print_random(int size)
 			i++;
 		}
 	}
-	print_arr(arr, size);
+	print_arr(arr, size, start_int);
 }
 
-int	main(int ac, char **av)
+int			main(int ac, char **av)
 {
-	if (ac != 2)
+	if (ac > 3)
 		return (1);
-	print_random(ft_atoi(av[1]));
+	if (ac == 2)
+		print_random(ft_atoi(av[1]), 0);
+	else
+		print_random(ft_atoi(av[1]), ft_atoi(av[2]));
 }

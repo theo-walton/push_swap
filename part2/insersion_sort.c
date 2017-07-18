@@ -94,6 +94,8 @@ void		insersion_sort(int *arr, int *brr, int *op_arr)
 	int index;
 
 	index = 0;
+	if (arr[0] > 150)
+		pre_process(arr, brr, op_arr);
 	if (!is_rot_sort(arr))
 	{
 		push_elem(brr, arr);
