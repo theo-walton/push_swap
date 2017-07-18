@@ -26,11 +26,16 @@ int			*sort_arr(int *arr)
 	int *brr;
 	int *op_arr;
 
+	if (arr[0] > 2500)
+		return ((int*)1);
 	if (!(op_arr = malloc(sizeof(int) * (100000))))
 		return (NULL);
 	makezero(op_arr);
 	if (!(brr = malloc(sizeof(int) * (arr[0] + 1))))
+	{
+		free(op_arr);
 		return (NULL);
+	}
 	brr[0] = 0;
 	if (!brute_force(arr, brr, op_arr))
 	{

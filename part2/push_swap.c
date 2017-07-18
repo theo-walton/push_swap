@@ -81,7 +81,15 @@ int			main(int ac, char **av)
 	}
 	if (arr[0] < 0)
 		return (error_management(arr));
-	strarr = get_actions(arr);
+	if ((strarr = get_actions(arr)) < (char**)2)
+	{
+		if (strarr == (char**)1)
+			write(1, "op limit may be exceeded...\n", 28);
+		else
+			write(1, "Memory Allocation Failed\n", 25);
+		free(arr);
+		return (1);
+	}
 	free(arr);
 	put_actions(strarr);
 	free_strarr(strarr);

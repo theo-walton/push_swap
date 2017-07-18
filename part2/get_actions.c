@@ -69,14 +69,19 @@ char		**get_actions(int *arr)
 	int		i;
 
 	i = 0;
-	if (!(op_arr = sort_arr(arr)))
+	if ((op_arr = sort_arr(arr)) < (int*)2)
+		return ((char**)op_arr);
+	if (!(strarr = malloc(sizeof(char*) * op_len_plus_1(op_arr))))
+	{
+		free(op_arr);
 		return (NULL);
-	strarr = malloc(sizeof(char*) * op_len_plus_1(op_arr));
+	}
 	while (op_arr[i])
 	{
 		if (!(strarr[i] = translate_ops(op_arr[i])))
 		{
 			free_the_strings(strarr, i);
+			free(op_arr);
 			return (NULL);
 		}
 		++i;
