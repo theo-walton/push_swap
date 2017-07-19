@@ -80,6 +80,8 @@ int			main(int ac, char **av)
 		write(2, "Memory Allocation Failed\n", 25);
 		return (0);
 	}
+	if (arr == (int*)1)
+		return (0);
 	if (arr[0] < 0)
 		return (error_management(arr));
 	does_solve(check_valid(read_input()), arr);

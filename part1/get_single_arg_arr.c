@@ -77,20 +77,22 @@ int			*get_single_arg_arr(char *str)
 
 	if (!(strarr = ft_strsplit(str, ' ')))
 		return (NULL);
+	if (strarr[0] == NULL)
+		return ((int*)1);
 	i = 0;
 	while (strarr[i])
 		++i;
 	if (!(arr = malloc(sizeof(int) * (i + 1))))
 		return (NULL);
-	i = 0;
-	while (strarr[i])
+	i = 1;
+	while (strarr[i - 1])
 	{
-		if ((arr[0] = is_valid_arg(strarr[i])) <= 0)
+		if ((arr[0] = is_valid_arg(strarr[i - 1])) <= 0)
 			return (arr);
-		arr[i] = ft_atoi(strarr[i]);
+		arr[i] = ft_atoi(strarr[i - 1]);
 		++i;
 	}
-	arr[0] = i;
+	arr[0] = i - 1;
 	check_for_duplicates(arr);
 	return (arr);
 }

@@ -37,17 +37,17 @@ static char	*translate_ops(int op_num)
 		return (ft_strdup("pa"));
 	if (op_num == 5)
 		return (ft_strdup("pb"));
-	if (op_num == 6)
-		return (ft_strdup("ra"));
-	if (op_num == 7)
-		return (ft_strdup("rb"));
-	if (op_num == 8)
-		return (ft_strdup("rr"));
 	if (op_num == 9)
-		return (ft_strdup("rra"));
+		return (ft_strdup("ra"));
 	if (op_num == 10)
-		return (ft_strdup("rrb"));
+		return (ft_strdup("rb"));
 	if (op_num == 11)
+		return (ft_strdup("rr"));
+	if (op_num == 6)
+		return (ft_strdup("rra"));
+	if (op_num == 7)
+		return (ft_strdup("rrb"));
+	if (op_num == 8)
 		return (ft_strdup("rrr"));
 	return (NULL);
 }
