@@ -66,10 +66,18 @@ static void	print_random(int size, int start_int)
 
 int			main(int ac, char **av)
 {
-	if (ac > 3)
-		return (1);
+	if ((ac == 2  || ac == 3) && ft_atoi(av[1]) < 0)
+	{
+		write(1, "size argument cannot be negative\n", 33);
+		return (0);
+	}
 	if (ac == 2)
 		print_random(ft_atoi(av[1]), 0);
-	else
+	if (ac == 1)
+		return (0);
+	if (ac == 3)
 		print_random(ft_atoi(av[1]), ft_atoi(av[2]));
+	if (ac > 3)
+		write(1, "too many arguments", 18);
+	write(1, "\n", 1);
 }

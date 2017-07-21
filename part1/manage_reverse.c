@@ -46,19 +46,13 @@ static void	print_arr(int *arr)
 	int i;
 
 	i = 1;
-	write(1, "[ ", 2);
 	while (i <= arr[0])
 	{
 		ft_putnbr(arr[i]);
-		if (arr[i] < 10)
-			write(1, " ", 1);
-		if (i % 10 == 0 && i != arr[0])
-			write(1, "\n  ", 3);
-		else
-			write(1, "  ", 2);
+		write(1, "  ", 2);
 		++i;
 	}
-	write(1, "\b\b ]\n", 5);
+	write(1, "\n", 1);
 }
 
 int			manage_reverse(char **av)

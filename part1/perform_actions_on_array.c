@@ -15,20 +15,20 @@
 static void	perform_action2(char *action, int *brr, int *arr)
 {
 	if (!ft_strcmp(action, "rb"))
-		rot_elem(brr, '+');
+		rot_elem(brr, '-');
 	else if (!ft_strcmp(action, "rr"))
+	{
+		rot_elem(arr, '-');
+		rot_elem(brr, '-');
+	}
+	else if (!ft_strcmp(action, "rra"))
+		rot_elem(arr, '+');
+	else if (!ft_strcmp(action, "rrb"))
+		rot_elem(brr, '+');
+	else if (!ft_strcmp(action, "rrr"))
 	{
 		rot_elem(arr, '+');
 		rot_elem(brr, '+');
-	}
-	else if (!ft_strcmp(action, "rra"))
-		rot_elem(arr, '-');
-	else if (!ft_strcmp(action, "rrb"))
-		rot_elem(brr, '-');
-	else if (!ft_strcmp(action, "rrr"))
-	{
-		rot_elem(arr, '-');
-		rot_elem(brr, '-');
 	}
 }
 
@@ -48,7 +48,7 @@ static void	perform_action(char *action, int *brr, int *arr)
 	else if (!ft_strcmp(action, "pb"))
 		push_elem(brr, arr);
 	else if (!ft_strcmp(action, "ra"))
-		rot_elem(arr, '+');
+		rot_elem(arr, '-');
 	else
 		perform_action2(action, brr, arr);
 }
