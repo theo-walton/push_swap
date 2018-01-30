@@ -139,4 +139,4 @@ min (operations): 577
 ~~~~
 
 
-credit of RM goes to nedoka
+credit of README goes to nedoka
