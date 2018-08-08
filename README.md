@@ -17,14 +17,14 @@ The project organization:
 libft - shared libraries functions  
 **pushchecker.sh** - script for multiple testing  
 
-###How to run?
+### How to run?
 ```
 make
 ```
 ```
 A="2 3 1"; ./push_swap $A | ./cheker $A
 ```
-###push_swap
+### push_swap
 ```
 ./push_swap 2 3 1
 ```
@@ -60,7 +60,7 @@ rra - - - - - - - - - - - - - 1
                     elems b: 0
 ~~~~
 
-###checker
+### checker
 ```
 ./checker 2 3 1
 rra
@@ -109,7 +109,7 @@ pb - - - - - - - - - - - - - 1
                     elems a: 2
                     elems b: 1
 ~~~~
-###pushcheker.sh
+### pushcheker.sh
 ```
 sh pushcheker.sh 100 2
 ```
